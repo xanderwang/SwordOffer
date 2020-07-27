@@ -11,11 +11,20 @@ package com.xander.sword;
  * 
  */
 public class App11 {
-  
+
   public static void main(String[] args) {
-    
+    System.out.println(NumberOf1(1));
+    System.out.println(NumberOf1(0));
+    System.out.println(NumberOf1(-1));
   }
-  public int NumberOf1(int n) {
-    return 0;
+
+  public static int NumberOf1(int n) {
+    // n & (n-1) 结果就是把 n 的最右边的一个 1 变成 0
+    int count = 0;
+    while (n != 0) {
+      count++;
+      n = n & (n - 1);
+    }
+    return count;
   }
 }
