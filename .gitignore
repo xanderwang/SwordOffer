@@ -13,3 +13,5 @@ buildNumber.properties
 .project
 .classpath
 .vscode/
+/offer.iml
+.idea/
