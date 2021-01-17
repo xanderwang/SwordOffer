@@ -5,19 +5,19 @@ package com.xander.sword;
  */
 public class App07 {
 
-  public static void main(String[] args) {
-    System.out.println(Fibonacci(13));
-  }
+    public static void main(String[] args) {
+        System.out.println(Fibonacci(13));
+    }
 
-  public static int Fibonacci(int n) {
-    if (n <= 0 || n > 39) {
-      return 0;
+    public static int Fibonacci(int n) {
+        if (n <= 0 || n > 39) {
+            return 0;
+        }
+        int[] res = { 0, 1, 1 };
+        for (int i = 3; i <= n; i++) {
+            res[i % res.length] = res[(i - 1) % res.length] + res[(i - 2) % res.length];
+        }
+        return res[n % res.length];
     }
-    int[] res = { 0, 1, 1 };
-    for (int i = 3; i <= n; i++) {
-      res[i % res.length] = res[(i - 1) % res.length] + res[(i - 2) % res.length];
-    }
-    return res[n % res.length];
-  }
 
 }

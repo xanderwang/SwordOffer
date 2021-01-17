@@ -11,36 +11,36 @@ import java.util.Stack;
 
 public class App05 {
 
-  Stack<Integer> stack1 = new Stack<>();
-  Stack<Integer> stack2 = new Stack<>();
+    Stack<Integer> stack1 = new Stack<>();
+    Stack<Integer> stack2 = new Stack<>();
 
-  public static void main(String[] args) {
-    App05 app05 = new App05();
-    app05.push(2);
-    app05.push(3);
-    app05.push(4);
-    System.out.println(app05.pop());
-    app05.push(5);
-    System.out.println(app05.pop());
-    System.out.println(app05.pop());
-    app05.push(6);
-    System.out.println(app05.pop());
-    System.out.println(app05.pop());
-  }
-
-  void push(Integer data) {
-    stack1.push(data);
-  }
-
-  int pop() {
-    if (stack2.isEmpty()) {
-      while (!stack1.isEmpty()) {
-        stack2.push(stack1.pop());
-      }
+    public static void main(String[] args) {
+        App05 app05 = new App05();
+        app05.push(2);
+        app05.push(3);
+        app05.push(4);
+        System.out.println(app05.pop());
+        app05.push(5);
+        System.out.println(app05.pop());
+        System.out.println(app05.pop());
+        app05.push(6);
+        System.out.println(app05.pop());
+        System.out.println(app05.pop());
     }
-    if (stack2.isEmpty()) {
-      return -1;
+
+    void push(Integer data) {
+        stack1.push(data);
     }
-    return stack2.pop();
-  }
+
+    int pop() {
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
+        }
+        if (stack2.isEmpty()) {
+            return -1;
+        }
+        return stack2.pop();
+    }
 }

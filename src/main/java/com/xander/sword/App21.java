@@ -13,16 +13,16 @@ import java.util.Stack;
  */
 public class App21 {
 
-  public boolean IsPopOrder(int[] pushA, int[] popA) {
-    int pop = 0;
-    Stack<Integer> tmp = new Stack<>();
-    for (int i = 0; i < pushA.length; i++) {
-      tmp.push(pushA[i]);
-      while (!tmp.isEmpty() && tmp.peek() == popA[pop]) {
-        tmp.pop();
-        pop++;
-      }
+    public boolean IsPopOrder(int[] pushA, int[] popA) {
+        int pop = 0;
+        Stack<Integer> tmp = new Stack<>();
+        for (int i = 0; i < pushA.length; i++) {
+            tmp.push(pushA[i]);
+            while (!tmp.isEmpty() && tmp.peek() == popA[pop]) {
+                tmp.pop();
+                pop++;
+            }
+        }
+        return pop + 1 == popA.length;
     }
-    return pop + 1 == popA.length;
-  }
 }

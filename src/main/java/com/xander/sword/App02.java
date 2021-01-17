@@ -10,35 +10,35 @@ package com.xander.sword;
  */
 public class App02 {
 
-  public static void main(String[] args) {
-    StringBuffer stringBuffer = new StringBuffer();
-    stringBuffer.append("We Are Happy.");
-    System.out.println(stringBuffer);
-    replaceSpace(stringBuffer);
-    System.out.println(stringBuffer);
-  }
+    public static void main(String[] args) {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("We Are Happy.");
+        System.out.println(stringBuffer);
+        replaceSpace(stringBuffer);
+        System.out.println(stringBuffer);
+    }
 
-  public static void replaceSpace(StringBuffer str) {
-    int sCount = 0;
-    int len = str.length();
-    for (int i = 0; i < len; i++) {
-      if (str.charAt(i) == ' ') {
-        sCount++;
-      }
+    public static void replaceSpace(StringBuffer str) {
+        int sCount = 0;
+        int len = str.length();
+        for (int i = 0; i < len; i++) {
+            if (str.charAt(i) == ' ') {
+                sCount++;
+            }
+        }
+        if (sCount == 0) {
+            return;
+        }
+        int endIndex = len + sCount * 2;
+        str.setLength(endIndex--);
+        for (int i = len - 1; i >= 0; i--) {
+            if (str.charAt(i) == ' ') {
+                str.setCharAt(endIndex--, '0');
+                str.setCharAt(endIndex--, '2');
+                str.setCharAt(endIndex--, '%');
+            } else {
+                str.setCharAt(endIndex--, str.charAt(i));
+            }
+        }
     }
-    if (sCount == 0) {
-      return;
-    }
-    int endIndex = len + sCount * 2;
-    str.setLength(endIndex--);
-    for (int i = len - 1; i >= 0; i--) {
-      if (str.charAt(i) == ' ') {
-        str.setCharAt(endIndex--, '0');
-        str.setCharAt(endIndex--, '2');
-        str.setCharAt(endIndex--, '%');
-      } else {
-        str.setCharAt(endIndex--, str.charAt(i));
-      }
-    }
-  }
 }

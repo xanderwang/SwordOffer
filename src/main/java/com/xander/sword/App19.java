@@ -12,35 +12,35 @@ import java.util.ArrayList;
  */
 public class App19 {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-  }
-
-  public ArrayList<Integer> printMatrix(int[][] matrix) {
-    ArrayList<Integer> result = new ArrayList<>();
-    int rows = matrix.length, cols = matrix[0].length;
-    for (int r = 0; r < rows; r++) {
-      int left = r, top = r, right = cols - r - 1, bottom = rows - r - 1;
-      if (left > right || top > bottom) {
-        break;
-      }
-      // top
-      for (int i = left; i <= right; i++) {
-        result.add(matrix[top][i]);
-      }
-      // right
-      for (int i = top + 1; i < bottom; i++) {
-        result.add(matrix[i][right]);
-      }
-      // bottom
-      for (int i = right; i >= left && top < bottom; i--) {
-        result.add(matrix[bottom][i]);
-      }
-      // left
-      for (int i = bottom - 1; i > top && left < right; i--) {
-        result.add(matrix[i][left]);
-      }
     }
-    return result;
-  }
+
+    public ArrayList<Integer> printMatrix(int[][] matrix) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int rows = matrix.length, cols = matrix[0].length;
+        for (int r = 0; r < rows; r++) {
+            int left = r, top = r, right = cols - r - 1, bottom = rows - r - 1;
+            if (left > right || top > bottom) {
+                break;
+            }
+            // top
+            for (int i = left; i <= right; i++) {
+                result.add(matrix[top][i]);
+            }
+            // right
+            for (int i = top + 1; i < bottom; i++) {
+                result.add(matrix[i][right]);
+            }
+            // bottom
+            for (int i = right; i >= left && top < bottom; i--) {
+                result.add(matrix[bottom][i]);
+            }
+            // left
+            for (int i = bottom - 1; i > top && left < right; i--) {
+                result.add(matrix[i][left]);
+            }
+        }
+        return result;
+    }
 }
