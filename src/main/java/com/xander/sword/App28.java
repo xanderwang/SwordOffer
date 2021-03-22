@@ -1,7 +1,5 @@
 package com.xander.sword;
 
-import java.util.Stack;
-
 /**
  * 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
  * 
