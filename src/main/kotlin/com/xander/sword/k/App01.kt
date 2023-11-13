@@ -49,13 +49,13 @@ object App01 {
 fun main() {
 
     val dataArray: Array<IntArray> =
-        arrayOf(
-            intArrayOf(1, 11, 21, 31, 41, 51, 61, 71, 81, 91),
-            intArrayOf(2, 12, 22, 32, 42, 52, 62, 72, 82, 92),
-            intArrayOf(3, 13, 23, 33, 43, 53, 63, 73, 83, 93),
-            intArrayOf(4, 14, 24, 34, 44, 54, 64, 74, 84, 94),
-            intArrayOf(5, 15, 25, 35, 45, 55, 65, 75, 85, 95),
-            intArrayOf(6, 16, 26, 36, 46, 56, 66, 76, 86, 96),
-        )
+            arrayOf(
+                    intArrayOf(1, 11, 21, 31, 41, 51, 61, 71, 81, 91),
+                    intArrayOf(2, 12, 22, 32, 42, 52, 62, 72, 82, 92),
+                    intArrayOf(3, 13, 23, 33, 43, 53, 63, 73, 83, 93),
+                    intArrayOf(4, 14, 24, 34, 44, 54, 64, 74, 84, 94),
+                    intArrayOf(5, 15, 25, 35, 45, 55, 65, 75, 85, 95),
+                    intArrayOf(6, 16, 26, 36, 46, 56, 66, 76, 86, 96),
+            )
     println(App01.find(dataArray, 52))
 }
