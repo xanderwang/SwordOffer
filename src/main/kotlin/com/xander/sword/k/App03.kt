@@ -30,27 +30,29 @@ object App03 {
         }
         return list
     }
-}
 
-class Node<T>(var value: T) {
-    var next: Node<T>? = null
+    class Node<T>(var value: T) {
+        var next: Node<T>? = null
 
-    fun link(nextValue: T): Node<T> {
-        if (null == next) {
-            next = Node(nextValue)
-        } else {
-            next?.value = nextValue
+        fun link(nextValue: T): Node<T> {
+            if (null == next) {
+                next = Node(nextValue)
+            } else {
+                next?.value = nextValue
+            }
+            return next!!
         }
-        return next!!
+
+        override fun toString(): String {
+            return value.toString()
+        }
     }
 
-    override fun toString(): String {
-        return value.toString()
-    }
 }
+
 
 fun main() {
-    val head = Node<String>("")
+    val head = App03.Node<String>("")
     head.link("9")
         .link("8")
         .link("7")
